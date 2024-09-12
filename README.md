@@ -53,6 +53,7 @@ Please develop a backend service using your preferred framework that meets the f
 ### docker
 
 - docker-compose up -d --build
+- docker-compose up --build
 
 - backend-image = docker build -t backend-service -f backend/Dockerfile .
 
