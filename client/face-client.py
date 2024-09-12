@@ -1,3 +1,6 @@
+from datetime import datetime
+import json
+from typing import Optional
 import requests
 import base64
 from PIL import Image
@@ -82,3 +85,6 @@ if __name__ == "__main__":
     access_token = authenticate_user(username, password)
     if access_token:
         upload_image(access_token, "../client/test_image.png")
+
+    else:
+        print('Failed to authenticate user.')

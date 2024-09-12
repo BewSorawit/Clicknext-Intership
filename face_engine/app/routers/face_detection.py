@@ -102,20 +102,18 @@ def get_results(
     db: Session = Depends(get_db)
 ):
     try:
-        # print(f"Current User ID: {current_user['user_id']}")
+        print(f"Current User ID: {current_user['user_id']}")
         query = db.query(FaceDetectionResult).filter(
             FaceDetectionResult.user_id == current_user['user_id'])
-        # print(f"Initial Query Count: {query.count()}")
+        print(f"Initial Query Count: {query.count()}")
         if start_time:
             query = query.filter(FaceDetectionResult.created_at >= start_time)
         if end_time:
             query = query.filter(FaceDetectionResult.created_at <= end_time)
         if result_id:
             query = query.filter(FaceDetectionResult.id == result_id)
-        # print(f"Filtered Query Count: {query.count()}")
+        print(f"Filtered Query Count: {query.count()}")
         results = query.all()
-        # print(f"Results: {results}")
-
         return results
 
     except Exception as e:
