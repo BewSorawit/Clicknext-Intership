@@ -90,7 +90,6 @@ def detect_faces_endpoint(request: ImageRequest, current_user: dict = Depends(ge
         db.commit()
         db.refresh(result)
 
-        # Update user quota
         user.api_quota_limit -= 1
         db.commit()
 

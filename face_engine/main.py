@@ -1,4 +1,3 @@
-from datetime import timedelta
 from fastapi import FastAPI
 import uvicorn
 from app.routers import face_detection, auth
