@@ -5,6 +5,7 @@ from io import BytesIO
 import io
 import cv2
 import numpy as np
+import os
 
 
 def image2base64(image_file_path: str, use_opencv: bool = False):
@@ -34,7 +35,7 @@ def base642image(base64str: str, use_opencv: bool = False):
 
 
 def authenticate_user(username: str, password: str) -> str:
-    login_url = "http://127.0.0.1:8000/user/login"
+    login_url = "http://127.0.0.1:8001/user/login"
     login_data = {"user_name": username, "password": password}
 
     response = requests.post(login_url, json=login_data)
@@ -62,8 +63,12 @@ def upload_image(access_token: str, image_file_path: str):
     if response.status_code == 200:
         result_json = response.json()
         if "result" in result_json:
+            output_dir = "../output"
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+
             image = base642image(result_json["result"], use_opencv=True)
-            cv2.imwrite("../output/result.jpg", image)
+            cv2.imwrite(os.path.join(output_dir, "result.jpg"), image)
         else:
             print("Response does not contain 'result'")
     else:
@@ -77,4 +82,4 @@ if __name__ == "__main__":
 
     access_token = authenticate_user(username, password)
     if access_token:
-        upload_image(access_token, "../client/bew.jpg")
+        upload_image(access_token, "../client/test_image.png")

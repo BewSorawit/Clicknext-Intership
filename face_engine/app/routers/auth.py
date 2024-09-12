@@ -29,7 +29,3 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
         return {"user_id": user.id}
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
-
-
-def check_quota(user):
-    return user.api_quota_limit > 0

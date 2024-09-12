@@ -66,7 +66,7 @@ def detect_faces(image: np.array):
 
 @router.post("/detect_faces", operation_id="detect_faces")
 def detect_faces_endpoint(request: ImageRequest, current_user: dict = Depends(get_current_user), db: Session = Depends(get_db)):
-    # Check API quota
+
     user = db.query(User).filter(User.id == current_user['user_id']).first()
     if user.api_quota_limit <= 0:
         raise HTTPException(
