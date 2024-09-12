@@ -23,16 +23,6 @@ class ImageRequest(BaseModel):
     image_base64: str
 
 
-class FaceDetectionResultResponse(BaseModel):
-    id: int
-    user_id: int
-    detected_faces: str
-    created_at: datetime
-
-    class Config:
-        orm_mode = True
-
-
 def base642image(base64str: str, use_opencv: bool = False):
     image = None
     if use_opencv:

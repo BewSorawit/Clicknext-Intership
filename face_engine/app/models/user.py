@@ -15,11 +15,3 @@ class User(Base):
     face_detection_results = relationship(
         "FaceDetectionResult", back_populates="user"
     )
-
-    def as_dict(self):
-        return {
-            'id': self.id,
-            'user_name': self.user_name,
-            'email': self.email,
-            'api_quota_limit': self.api_quota_limit
-        }
