@@ -79,7 +79,7 @@ def upload_image(access_token: str, image_file_path: str):
 
 
 if __name__ == "__main__":
-    username = "test1"
+    username = "test2"
     password = "test123"
 
     access_token = authenticate_user(username, password)

@@ -2,10 +2,15 @@ from fastapi import FastAPI
 import uvicorn
 from app.routers import face_detection, auth
 from app.database import engine, Base
+from middleware.middleware import AdvancedMiddleware
 
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
+
+
+app.add_middleware(AdvancedMiddleware)
+
 
 app.include_router(face_detection.router)
 app.include_router(auth.router)

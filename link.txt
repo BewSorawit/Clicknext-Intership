@@ -10,6 +10,9 @@ refreash = https://www.borntodev.com/2022/12/15/%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B
 3. middleware 
 limitAPI = https://fastapi.tiangolo.com/advanced/middleware/#integrated-middlewares
 https://blog.compliiant.io/api-defense-with-rate-limiting-using-fastapi-and-token-buckets-0f5206fc5029
+https://fastapi.tiangolo.com/tutorial/middleware/
+https://www.youtube.com/watch?v=2-exKF2Vszg
+
 
 4. docker
 dockerfile = https://medium.com/i-gear-geek/%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%99-docker-file-%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89-docker-image-d2dedd10361e
