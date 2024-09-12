@@ -1,0 +1,14 @@
+1. databases
+org_database = https://fastapi.tiangolo.com/tutorial/sql-databases/
+conDB = https://www.geeksforgeeks.org/fastapi-sqlite-databases/
+
+2. passWord
+passlib = https://fastapitutorial.com/blog/password-hashing-fastapi/
+JWT = https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/#hash-and-verify-the-passwords
+refreash = https://www.borntodev.com/2022/12/15/%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A-api-authentication-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-jwt-refresh-token-%E0%B8%81%E0%B8%B1%E0%B8%9A-nodejs/
+
+3. middleware 
+limitAPI = https://fastapi.tiangolo.com/advanced/middleware/#integrated-middlewares
+https://blog.compliiant.io/api-defense-with-rate-limiting-using-fastapi-and-token-buckets-0f5206fc5029
+
+
