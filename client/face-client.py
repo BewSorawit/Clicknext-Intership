@@ -39,16 +39,18 @@ def authenticate_user(username: str, password: str) -> str:
     login_data = {"user_name": username, "password": password}
 
     response = requests.post(login_url, json=login_data)
+    # print(f"Login response: {response.status_code} - {response.text}")
 
     if response.status_code == 200:
         tokens = response.json()
-        return tokens['access_token']
+        return tokens.get('access_token')
     else:
         print(f"Login failed: {response.status_code} - {response.text}")
         return None
 
 
 def upload_image(access_token: str, image_file_path: str):
+    print(f"Using access token: {access_token}")  # Debugging line
     b64str = image2base64(image_file_path, use_opencv=True)
     url = "http://127.0.0.1:8000/face/detect_faces"
     headers = {
@@ -59,6 +61,9 @@ def upload_image(access_token: str, image_file_path: str):
 
     data = {"image_base64": b64str}
     response = requests.post(url, json=data, headers=headers)
+
+    # Debugging line
+    print(f"Upload response: {response.status_code} - {response.text}")
 
     if response.status_code == 200:
         result_json = response.json()
