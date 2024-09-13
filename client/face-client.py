@@ -38,10 +38,11 @@ def base642image(base64str: str, use_opencv: bool = False):
 
 
 def authenticate_user(username: str, password: str) -> str:
-    login_url = "http://127.0.0.1:8001/user/login"
+    login_url = "https://127.0.0.1:8001/user/login"
     login_data = {"user_name": username, "password": password}
 
-    response = requests.post(login_url, json=login_data)
+    response = requests.post(login_url, json=login_data,
+                             verify=False)  # ปิดการตรวจสอบใบรับรอง
     if response.status_code == 200:
         tokens = response.json()
         return tokens.get('access_token')
@@ -52,7 +53,7 @@ def authenticate_user(username: str, password: str) -> str:
 
 def upload_image(access_token: str, image_file_path: str):
     b64str = image2base64(image_file_path, use_opencv=True)
-    url = "http://127.0.0.1:8000/face/detect_faces"
+    url = "https://127.0.0.1:8000/face/detect_faces"
     headers = {
         "accept": "application/json",
         "Content-Type": "application/json",
@@ -60,7 +61,8 @@ def upload_image(access_token: str, image_file_path: str):
     }
 
     data = {"image_base64": b64str}
-    response = requests.post(url, json=data, headers=headers)
+    # close verity ssl
+    response = requests.post(url, json=data, headers=headers, verify=False)
 
     if response.status_code == 200:
         result_json = response.json()
@@ -79,7 +81,7 @@ def upload_image(access_token: str, image_file_path: str):
 
 
 if __name__ == "__main__":
-    username = "test2"
+    username = "test1"
     password = "test123"
 
     access_token = authenticate_user(username, password)

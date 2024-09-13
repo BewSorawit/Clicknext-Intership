@@ -22,4 +22,11 @@ dockerfile = https://medium.com/i-gear-geek/%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2
 5. API Document
 postmant = https://medium.com/@daisyfoto/%E0%B8%A1%E0%B8%B2%E0%B8%97%E0%B8%B3-api-document-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-postman-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%96%E0%B8%AD%E0%B8%B0-c024aaa1c162
 
+
+6. secure transfer
+ssl_keyfile = https://escape.tech/blog/how-to-secure-fastapi-api/
+images_docker = https://hub.docker.com/_/alpine
+Alpine Image to establish Secured Communication (SSL/TLS) = https://medium.com/hackernoon/alpine-docker-image-with-secured-communication-ssl-tls-go-restful-api-128eb6b54f1f
+Adding HTTPS to FastAPI = https://medium.com/@mariovanrooij/adding-https-to-fastapi-ad5e0f9e084e
+
 *** ปัญหา databases ส่วนกลาง
