@@ -15,13 +15,12 @@ class AdvancedMiddleware(BaseHTTPMiddleware):
 
     async def dispatch(self, request: Request, call_next):
         client_ip = request.client.host
-        current_time = time.time()
 
+        current_time = time.time()
         time_since_last_request = current_time - \
             self.rate_limit_records[client_ip]
         if time_since_last_request < 0.1:
             return Response(content="Rate limit exceeded", status_code=429)
-
         self.rate_limit_records[client_ip] = current_time
 
         path = request.url.path

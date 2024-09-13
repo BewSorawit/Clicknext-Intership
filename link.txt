@@ -30,3 +30,4 @@ Alpine Image to establish Secured Communication (SSL/TLS) = https://medium.com/h
 Adding HTTPS to FastAPI = https://medium.com/@mariovanrooij/adding-https-to-fastapi-ad5e0f9e084e
 
 *** ปัญหา databases ส่วนกลาง
+วิธี check limit request
