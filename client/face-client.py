@@ -9,6 +9,10 @@ import io
 import cv2
 import numpy as np
 import os
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+import warnings
+
+warnings.simplefilter('ignore', InsecureRequestWarning)
 
 
 def image2base64(image_file_path: str, use_opencv: bool = False):
@@ -42,7 +46,7 @@ def authenticate_user(username: str, password: str) -> str:
     login_data = {"user_name": username, "password": password}
 
     response = requests.post(login_url, json=login_data,
-                             verify=False)  # ปิดการตรวจสอบใบรับรอง
+                             verify=False)
     if response.status_code == 200:
         tokens = response.json()
         return tokens.get('access_token')

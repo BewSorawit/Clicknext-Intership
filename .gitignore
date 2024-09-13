@@ -3,3 +3,5 @@ faceEngine.db
 __pycache__/
 face_engine/venv
 face_engine/*.pyc
+backend/db
+face_engine/db

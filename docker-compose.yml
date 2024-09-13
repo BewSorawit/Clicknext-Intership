@@ -9,6 +9,7 @@ services:
     volumes:
       - ./backend:/app
       - dbdata:/app/db
+      - ./ssl:/ssl
     env_file:
       - .env
     depends_on:
@@ -24,6 +25,7 @@ services:
     volumes:
       - ./face_engine:/app
       - dbdata:/app/db
+      - ./ssl:/ssl
     env_file:
       - .env
 

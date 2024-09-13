@@ -63,3 +63,7 @@ Please develop a backend service using your preferred framework that meets the f
 
   - docker run --name face-engine-container -p 8000:8000 face-engine-service
   - docker run -d --name face-engine-container -p 8000:8000 face-engine-service
+
+- ssl = docker build -t openssl-cert .
+  - docker create image ssl-gerator = docker run --rm -v certs ssl-generator
+  - in matchine = docker run -it --rm -v %cd%:/certs openssl-cert

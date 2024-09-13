@@ -14,4 +14,4 @@ COPY face_engine/ /app/
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--ssl-certfile", "/ssl/cert.pem", "--ssl-keyfile", "/ssl/key.pem"]
